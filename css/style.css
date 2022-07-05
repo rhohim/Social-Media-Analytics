@@ -1,0 +1,138 @@
+.middle {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  width: 550px;
+  text-align: center;
+}
+
+body {
+  background: rgba(238, 238, 238, 0.137);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.list {
+  background: white;
+  box-shadow: rgba(99, 99, 99, 0.082) 0px 2px 8px 0px;
+  font-weight: 600;
+}
+
+.list:hover {
+  background: royalblue;
+  color: white;
+}
+
+img {
+  border-radius: 100%;
+  box-shadow: rgba(99, 99, 99, 0.082) 0px 2px 8px 0px;
+}
+
+.cbn {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(15, 15, 15);
+}
+
+.footer span {
+  color: royalblue;
+}
+
+.form-signin {
+  position: absolute;
+  max-width: 500px;
+  min-width: 500px;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.form-signin input{
+    height: 50px;
+}
+
+.copy {
+  text-decoration: none;
+  color: dimgray;
+  font-weight: 600;
+}
+
+p.apiauth {
+  font-size: 24pt;
+  font-weight: 700;
+  color: rgb(15, 15, 15);
+}
+
+#myList li {
+  margin: 10px 0 0px;
+  background: rgba(0, 0, 0, 0.048);
+  padding: 10px;
+}
+
+#listWeb li {
+  margin: 10px 0 0px;
+  background: rgba(0, 0, 0, 0.048);
+  padding: 10px;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.right {
+  text-align: right;
+}
+
+.card-body {
+  padding: 25px;
+  margin: 0;
+}
+
+.loading {
+  background: rgba(0, 0, 0, 0.568);
+  z-index: 19999;
+  position: fixed;
+  color: black;
+  display: none;
+}
+
+.card-loading p {
+  margin: 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .middle {
+    min-width: 250px;
+    max-width: 350px;
+    height: 100%;
+  }
+  .form-signin {
+    max-width: 500px;
+    min-width: 350px;
+    padding: 0;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+}
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+}
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+}
