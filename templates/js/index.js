@@ -2,7 +2,7 @@ var jwt = localStorage.getItem("jwt");
 if (jwt == null) {
     window.location.href = './login'
 }
-
+ 
 // function loadUser() {
 //     const xhttp = new XMLHttpRequest();
 //     xhttp.open("GET", "https://www.mecallapi.com/api/auth/user");
@@ -21,7 +21,7 @@ if (jwt == null) {
 //         }
 //     };
 // }
- 
+
 // function loadUser() {
 //     const xhttp = new XMLHttpRequest();
 //     document.getElementById('loader').style.display = "block"

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -85,10 +85,10 @@
                                             <p>Version 1.0</p>
                                         </div>
                                         <div class="col-lg-7">
-                                            <form>
+                                            <form action="{{ url_for('ig')}}" method="post">
                                                 <div class="form-group">
                                                     <label for="usernameIg">Username Instagram</label>
-                                                    <input type="text" class="form-control" id="usernameIg"
+                                                    <input name="fname" type="text" class="form-control" id="usernameIg"
                                                         aria-describedby="emailHelp" placeholder="Enter username"
                                                         required>
                                                     <small id="emailHelp" class="form-text text-muted">Input only
@@ -102,6 +102,215 @@
                             </div>
                         </section>
                     </div>
+                    {% if user_image %}
+                    <div class="col-lg-4 py-2">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="card card-profile h-100 text-center">
+                                    <div class="card-body">
+                                        <img src="{{user_image}}" alt="" width="100px" height="100px">
+                                        <h3><strong>{{usrname}}</strong></h3>
+                                        <p class="py-3"><strong>Bio: </strong><span>{{bio}}</span></p>
+                                        <p><strong>Website: <span><a href="{{url}}">{{url}}</a></span></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 py-2">
+                        <div class="card h-100 card-chart">
+                            <div class="card-body">
+                                <p>
+                                <div>
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="row py-3">
+                            <div class="col-lg-3 col-6">
+                                <div class="card card-grid">
+                                    <div class="card-body">
+                                        <p><i class="fas fa-user-friends icon-list"></i>Followers:</p>
+                                        <p class="data-static">
+                                            {{followers}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="card card-grid">
+                                    <div class="card-body">
+                                        <p><i class="fas fa-photo-video icon-list"></i>Media Count:</p>
+                                        <p class="data-static">
+                                            {{media_count}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="card card-grid">
+                                    <div class="card-body">
+                                        <p><i class="fas fa-percentage icon-list"></i>Egm Rate:</p>
+                                        <p class="data-static">
+                                            {{engagement_ig}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <div class="card card-grid">
+                                    <div class="card-body">
+                                        <p><i class="fas fa-thumbs-up icon-list"></i>Avg Likes:</p>
+                                        <p class="data-static">
+                                            {{avg_like}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card card-heading">
+                            <div class="card-body">
+                                <h4>Latest 12 Posts:</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Caption</th>
+                                                <th scope="col">Link</th>
+                                                <th scope="col">Dates</th>
+                                                <th scope="col">Like</th>
+                                                <th scope="col">Comments</th>
+                                                <th scope="col">Views</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">1</td>
+                                                <td class="box">{{caption_1}}</td>
+                                                <td><a href="{{link_1}}">Link</a></td>
+                                                <td>{{date_1}}</td>
+                                                <td>{{like_1}}</td>
+                                                <td>{{comment_1}}</td>
+                                                <td>{{view_1}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">2</td>
+                                                <td class="box">{{caption_2}}</td>
+                                                <td><a href="{{link_2}}">Link</a></td>
+                                                <td>{{date_2}}</td>
+                                                <td>{{like_2}}</td>
+                                                <td>{{comment_2}}</td>
+                                                <td>{{view_2}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">3</td>
+                                                <td class="box">{{caption_3}}</td>
+                                                <td><a href="{{link_3}}">Link</a></td>
+                                                <td>{{date_3}}</td>
+                                                <td>{{like_3}}</td>
+                                                <td>{{comment_3}}</td>
+                                                <td>{{view_2}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">4</td>
+                                                <td class="box">{{caption_4}}</td>
+                                                <td><a href="{{link_4}}">Link</a></td>
+                                                <td>{{date_4}}</td>
+                                                <td>{{like_4}}</td>
+                                                <td>{{comment_4}}</td>
+                                                <td>{{view_4}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">5</td>
+                                                <td class="box">{{caption_5}}</td>
+                                                <td><a href="{{link_5}}">Link</a></td>
+                                                <td>{{date_5}}</td>
+                                                <td>{{like_5}}</td>
+                                                <td>{{comment_5}}</td>
+                                                <td>{{view_5}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">6</td>
+                                                <td class="box">{{caption_6}}</td>
+                                                <td><a href="{{link_6}}">Link</a></td>
+                                                <td>{{date_6}}</td>
+                                                <td>{{like_6}}</td>
+                                                <td>{{comment_6}}</td>
+                                                <td>{{view_6}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">7</td>
+                                                <td class="box">{{caption_7}}</td>
+                                                <td><a href="{{link_7}}">Link</a></td>
+                                                <td>{{date_7}}</td>
+                                                <td>{{like_7}}</td>
+                                                <td>{{comment_7}}</td>
+                                                <td>{{view_7}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">8</td>
+                                                <td class="box">{{caption_8}}</td>
+                                                <td><a href="{{link_8}}">Link</a></td>
+                                                <td>{{date_8}}</td>
+                                                <td>{{like_8}}</td>
+                                                <td>{{comment_8}}</td>
+                                                <td>{{view_8}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">9</td>
+                                                <td class="box">{{caption_9}}</td>
+                                                <td><a href="{{link_9}}">Link</a></td>
+                                                <td>{{date_9}}</td>
+                                                <td>{{like_9}}</td>
+                                                <td>{{comment_9}}</td>
+                                                <td>{{view_9}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">10</td>
+                                                <td class="box">{{caption_10}}</td>
+                                                <td><a href="{{link_10}}">Link</a></td>
+                                                <td>{{date_10}}</td>
+                                                <td>{{like_10}}</td>
+                                                <td>{{comment_10}}</td>
+                                                <td>{{view_10}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">11</td>
+                                                <td class="box">{{caption_11}}</td>
+                                                <td><a href="{{link_11}}">Link</a></td>
+                                                <td>{{date_11}}</td>
+                                                <td>{{like_11}}</td>
+                                                <td>{{comment_11}}</td>
+                                                <td>{{view_11}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">12</td>
+                                                <td class="box">{{caption_12}}</td>
+                                                <td><a href="{{link_12}}">Link</a></td>
+                                                <td>{{date_12}}</td>
+                                                <td>{{like_12}}</td>
+                                                <td>{{comment_12}}</td>
+                                                <td>{{view_12}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
                     <div class="col-lg-4 py-2">
                         <div class="card h-100">
                             <div class="card-body">
@@ -192,6 +401,7 @@
                                                 <th scope="col">Caption</th>
                                                 <th scope="col">Link</th>
                                                 <th scope="col">Dates</th>
+                                                <th scope="col">Like</th>
                                                 <th scope="col">Comments</th>
                                                 <th scope="col">Views</th>
                                             </tr>
@@ -199,13 +409,14 @@
                                         <tbody>
                                             <tr>
                                                 <td scope="row">1</td>
-                                                <td><img src="https://via.placeholder.com/50x50" alt=""></td>
+                                               
                                                 <td class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
                                                     soluta minima necessitatibus commodi ea perferendis at illo nemo
                                                     repellat. Exercitationem consequatur voluptate distinctio quia sed
                                                     atque, expedita dolorum facilis nisi.</td>
                                                 <td><a href="">Link</a></td>
                                                 <td>20-07-2022</td>
+                                                <td>12312</td>
                                                 <td>12312</td>
                                                 <td>1232</td>
                                             </tr>
@@ -215,6 +426,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
 
 
@@ -232,7 +444,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script>
-
+        
         </script>
 
 </body>
